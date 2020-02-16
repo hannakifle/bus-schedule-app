@@ -11,18 +11,25 @@ namespace busschedule_app
     /// </summary>
     class Bus
     {
+        enum TypeofStation
+        {
+            StationA,
+            StationB,
+            StationC,
+        }
         private static int lastBusnumber = 0;
         #region properties
+
         /// <summary>
         /// unique bus number
         /// </summary>
-        public int Busnumber { get; set; }
-        public string Stationname { get; set; }
+        public int Busnumber { get; private set; }
+        public string Stationname {  get; set; }
         public string Transit { get; set; }
-        public int Arivingtime { get; set; }
+        public int Arivingtime { get; private set; }
         public int Destinationtime { get; set; }
         public string Address { get; set; }
-        #endregion
+        #endregion\\
 
         #region constructor
         public Bus()
@@ -39,9 +46,9 @@ namespace busschedule_app
         /// view near by station
         /// </summary>
         /// <returns>view all line for this station</returns>
-        public void Nearbystation(string station)
+        public void Nearbystation(string Station)
         {
-            station += Stationname;
+            Station += Stationname; 
         }
         public int Arrivingtime(int time)
         {
